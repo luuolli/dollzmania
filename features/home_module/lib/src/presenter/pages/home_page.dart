@@ -7,6 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final mediaQuery = MediaQuery.of(context);
 
     return Container(
       decoration: const BoxDecoration(
@@ -29,7 +30,7 @@ class HomePage extends StatelessWidget {
                 children: [
                   Image.asset(
                     'assets/images/girl.png',
-                    height: 180,
+                    height: mediaQuery.size.width * 0.5,
                   ),
                   Text.rich(
                     TextSpan(
@@ -44,14 +45,16 @@ class HomePage extends StatelessWidget {
                       ],
                     ),
                     textAlign: TextAlign.end,
-                    style: theme.textTheme.headline6
-                        ?.copyWith(color: Colors.white),
+                    style: theme.textTheme.headline4?.copyWith(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ],
               ),
               CupertinoTextField(
                 padding: const EdgeInsets.symmetric(
-                  horizontal: 8,
+                  horizontal: 12,
                   vertical: 10,
                 ),
                 decoration: BoxDecoration(
@@ -66,10 +69,22 @@ class HomePage extends StatelessWidget {
               ),
               SizedBox(
                 width: double.maxFinite,
-                child: CupertinoButton(
-                  color: const Color(0xFF220D78),
-                  child: const Text('Jogar'),
-                  onPressed: () {},
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(8),
+                    boxShadow: [
+                      BoxShadow(
+                        color: const Color(0xFF003A5A).withOpacity(0.5),
+                        offset: const Offset(2, 3),
+                        spreadRadius: 1.5,
+                      ),
+                    ],
+                  ),
+                  child: CupertinoButton(
+                    color: const Color(0xFF0D5878),
+                    child: const Text('Jogar'),
+                    onPressed: () {},
+                  ),
                 ),
               )
             ],
