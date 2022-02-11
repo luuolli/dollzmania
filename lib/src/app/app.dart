@@ -12,12 +12,7 @@ class App extends StatelessWidget {
       () {
         Future.delayed(
           Duration.zero,
-          () => Navigator.pushReplacement(
-            context,
-            CupertinoPageRoute(
-              builder: (_) => const HomePage(),
-            ),
-          ),
+          () => Navigator.pushReplacementNamed(context, '/'),
         );
       },
     );
