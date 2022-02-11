@@ -10,7 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  sucrilhos_design_system:
+    path: ../../sucrilhos_design_system
 dev_dependencies:
   flutter_test:
     sdk: flutter
