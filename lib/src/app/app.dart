@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:splash_module/splash_module.dart';
 import 'package:home_module/home_module.dart';
+import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -24,6 +26,14 @@ class App extends StatelessWidget {
       debugShowCheckedModeBanner: kDebugMode,
       routes: _buildRoutes(),
       initialRoute: 'splash/',
+      builder: (context, child) {
+        return Container(
+          decoration: BoxDecoration(
+            gradient: AppGradients.mainGradient,
+          ),
+          child: child,
+        );
+      },
     );
   }
 
