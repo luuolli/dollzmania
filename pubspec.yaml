@@ -16,6 +16,8 @@ dependencies:
   # App Modules
   home_module:
     path: features/home_module
+  splash_module:
+    path: features/splash_module
   
 dev_dependencies:
   flutter_test:
