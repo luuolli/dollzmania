@@ -22,8 +22,11 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: kDebugMode,
+      theme: lightTheme,
+      darkTheme: darkTheme,
+      themeMode: ThemeMode.dark,
       routes: _buildRoutes(),
       initialRoute: 'splash/',
       builder: (context, child) {
