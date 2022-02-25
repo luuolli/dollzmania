@@ -1,8 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:splash_module/splash_module.dart';
-import 'package:home_module/home_module.dart';
+import 'package:start_module/start_module.dart';
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class App extends StatelessWidget {
@@ -45,7 +44,7 @@ class App extends StatelessWidget {
       "splash/": (context) => SplashScreen(
             onRedirect: _redirectToHome(context),
           ),
-      "/": (context) => const HomePage(),
+      "/": (context) => const StartPage(),
     };
   }
 }
