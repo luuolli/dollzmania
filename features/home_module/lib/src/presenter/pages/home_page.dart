@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -56,15 +57,10 @@ class HomePage extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(8),
-                  boxShadow: [
-                    BoxShadow(
-                      color: theme.primaryColor.withOpacity(0.5),
-                      offset: const Offset(2, 3),
-                      spreadRadius: 1.5,
-                    ),
-                  ],
+                  boxShadow: AppShadows.defaultShadow(theme),
                 ),
                 child: CupertinoButton(
+                  borderRadius: BorderRadius.circular(8),
                   color: theme.primaryColor,
                   child: const Text('Jogar'),
                   onPressed: () {},
