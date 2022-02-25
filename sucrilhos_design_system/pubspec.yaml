@@ -1,5 +1,5 @@
-name: splash_module
-description: Splash module.
+name: sucrilhos_design_system
+description: Design system module.
 version: 0.0.1
 publish_to: "none"
 
@@ -10,8 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  sucrilhos_design_system:
-    path: ../../sucrilhos_design_system
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
