@@ -13,7 +13,7 @@ class App extends StatelessWidget {
       () {
         Future.delayed(
           Duration.zero,
-          () => Navigator.pushReplacementNamed(context, '/'),
+          () => Navigator.pushReplacementNamed(context, '/start'),
         );
       },
     );
@@ -44,7 +44,7 @@ class App extends StatelessWidget {
       "splash/": (context) => SplashScreen(
             onRedirect: _redirectToHome(context),
           ),
-      "/": (context) => const StartPage(),
+      "/start": (context) => const StartPage(),
     };
   }
 }
