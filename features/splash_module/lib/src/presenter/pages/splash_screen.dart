@@ -34,18 +34,8 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
-    return Container(
-      decoration: const BoxDecoration(
-        gradient: LinearGradient(
-          // TODO: Move colors to design system
-          colors: [Color(0xFF00A7DC), Color(0xFF8FF7EB)],
-          begin: Alignment.centerLeft,
-          end: Alignment.topRight,
-        ),
-      ),
-      child: Center(
-        child: DollzmaniaLogo(size: mediaQuery.size.width * percentSize),
-      ),
+    return Center(
+      child: DollzmaniaLogo(size: mediaQuery.size.width * percentSize),
     );
   }
 }
