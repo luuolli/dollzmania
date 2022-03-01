@@ -16,6 +16,8 @@ dependencies:
   # App Modules
   dependency_module:
     path: dependency_module
+  home_module:
+    path: features/home_module
   start_module:
     path: features/start_module
   splash_module:
