@@ -12,8 +12,8 @@ class AppModular extends Module {
         ),
         ChildRoute(
           '/start',
-          child: (context, args) => StartPage(
-            onPlay: (playerName) => _redirectToHome(),
+          child: (context, args) => const StartPage(
+            onPlay: _redirectToHome,
           ),
         ),
         ChildRoute(
@@ -29,6 +29,6 @@ _redirectToStart() {
   Modular.to.navigate('/start');
 }
 
-_redirectToHome() {
-  Modular.to.navigate('/home');
+_redirectToHome(String playerName) {
+  Modular.to.navigate('/home', arguments: playerName);
 }
