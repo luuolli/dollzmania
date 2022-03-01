@@ -12,7 +12,7 @@ class AppModular extends Module {
         ),
         ChildRoute(
           '/start',
-          child: (context, args) => const StartPage(
+          child: (context, args) => StartPage(
             onPlay: _redirectToHome,
           ),
         ),
