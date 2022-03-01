@@ -1,18 +1,21 @@
-name: dependency_module
-description: A new Flutter package project.
+name: start_module
+description: Start module.
 version: 0.0.1
 publish_to: "none"
 
 environment:
   sdk: ">=2.15.1 <3.0.0"
   flutter: ">=1.17.0"
-  
+
 dependencies:
   flutter:
     sdk: flutter
-  flutter_mobx: ^2.0.4
-  flutter_modular: ^4.5.0
-  mobx: ^2.0.6+1
+  sucrilhos_design_system:
+    path: ../../sucrilhos_design_system
+  dependency_module:
+    path: ../../dependency_module
+  core_module:
+    path: ../../core_module
 dev_dependencies:
   flutter_test:
     sdk: flutter

@@ -1,7 +1,5 @@
 library dependency_module;
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+export 'package:flutter_mobx/flutter_mobx.dart' hide version;
+export 'package:flutter_modular/flutter_modular.dart';
+export 'package:mobx/mobx.dart';

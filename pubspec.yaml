@@ -14,8 +14,10 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   # App Modules
-  home_module:
-    path: features/home_module
+  dependency_module:
+    path: dependency_module
+  start_module:
+    path: features/start_module
   splash_module:
     path: features/splash_module
   sucrilhos_design_system:

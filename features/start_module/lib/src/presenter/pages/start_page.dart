@@ -1,7 +1,11 @@
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class StartPage extends StatelessWidget {
+  final _playerNameController = TextEditingController();
+
+  final Function(String playerName)? onPlay;
+
+  StartPage({Key? key, this.onPlay}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -40,6 +44,7 @@ class HomePage extends StatelessWidget {
               ],
             ),
             CupertinoTextField(
+              controller: _playerNameController,
               padding: theme.buttonTheme.padding,
               decoration: BoxDecoration(
                 color: theme.colorScheme.onBackground.withOpacity(0.3),
@@ -61,7 +66,9 @@ class HomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: theme.primaryColor,
                   child: const Text('Jogar'),
-                  onPressed: () {},
+                  onPressed: () {
+                    onPlay?.call(_playerNameController.value.text);
+                  },
                 ),
               ),
             )
