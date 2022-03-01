@@ -1,9 +1,9 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class StartPage extends StatelessWidget {
-  const StartPage({Key? key}) : super(key: key);
+  final Function(String playerName)? onPlay;
+
+  const StartPage({Key? key, this.onPlay}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +63,9 @@ class StartPage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                   color: theme.primaryColor,
                   child: const Text('Jogar'),
-                  onPressed: () {},
+                  onPressed: () {
+                    onPlay?.call("Nome do jogador");
+                  },
                 ),
               ),
             )

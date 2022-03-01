@@ -14,6 +14,8 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   # App Modules
+  dependency_module:
+    path: dependency_module
   start_module:
     path: features/start_module
   splash_module:

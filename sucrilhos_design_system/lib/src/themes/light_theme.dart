@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../colors.dart';
@@ -54,5 +53,3 @@ final ThemeData lightTheme = ThemeData.light().copyWith(
             ),
       ),
 );
-
-final CupertinoThemeData cupertinoLightTheme = CupertinoThemeData().copyWith();

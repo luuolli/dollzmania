@@ -1,5 +1,3 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class HomePage extends StatelessWidget {
