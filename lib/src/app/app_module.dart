@@ -1,7 +1,7 @@
 import 'package:dependency_module/dependency_module.dart';
-import 'package:dollzmania/src/home/home.dart';
 import 'package:splash_module/splash_module.dart';
 import 'package:start_module/start_module.dart';
+import 'package:home_module/home_module.dart';
 
 class AppModular extends Module {
   @override
@@ -30,5 +30,5 @@ _redirectToStart() {
 }
 
 _redirectToHome(String playerName) {
-  Modular.to.navigate('/home', arguments: playerName);
+  Modular.to.pushNamed('/home', arguments: playerName);
 }
