@@ -27,6 +27,7 @@ class HomePage extends StatelessWidget {
       child: SafeArea(
         minimum: const EdgeInsets.symmetric(horizontal: 20).copyWith(
           top: 120,
+          bottom: 20,
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -39,18 +40,27 @@ class HomePage extends StatelessWidget {
                   style: theme.textTheme.bodyText2,
                 ),
                 const SizedBox(height: 15),
-                SingleChildScrollView(
-                  clipBehavior: Clip.none,
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
+                SizedBox(
+                  height: 60,
+                  child: ReorderableListView(
+                    clipBehavior: Clip.none,
+                    scrollDirection: Axis.horizontal,
+                    onReorder: (int oldIndex, int newIndex) {},
                     children: List.generate(
                       20,
                       (index) => Container(
+                        key: Key(index.toString()),
                         width: 60,
                         height: 60,
                         margin: const EdgeInsets.only(right: 5),
                         decoration: BoxDecoration(
-                          color: AppColors.darkBlue,
+                          color: Colors.transparent,
+                          image: DecorationImage(
+                            image: Image.network(
+                              'https://picsum.photos/200/${index * 100}',
+                            ).image,
+                            fit: BoxFit.cover,
+                          ),
                           border: Border.all(
                             color: AppColors.white,
                             width: 2,
@@ -58,6 +68,7 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(6),
                         ),
                       ),
+                      growable: false,
                     ),
                   ),
                 ),
