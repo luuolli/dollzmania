@@ -1,3 +1,4 @@
+import 'package:game_module/game_module.dart';
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class HomePage extends StatelessWidget {
@@ -48,27 +49,9 @@ class HomePage extends StatelessWidget {
                     onReorder: (int oldIndex, int newIndex) {},
                     children: List.generate(
                       20,
-                      (index) => Container(
+                      (index) => SortableItemWidget(
                         key: Key(index.toString()),
-                        width: 60,
-                        height: 60,
-                        margin: const EdgeInsets.only(right: 5),
-                        decoration: BoxDecoration(
-                          color: Colors.transparent,
-                          image: DecorationImage(
-                            image: Image.network(
-                              'https://picsum.photos/200/${index * 100}',
-                            ).image,
-                            fit: BoxFit.cover,
-                          ),
-                          border: Border.all(
-                            color: AppColors.white,
-                            width: 2,
-                          ),
-                          borderRadius: BorderRadius.circular(6),
-                        ),
                       ),
-                      growable: false,
                     ),
                   ),
                 ),
@@ -114,25 +97,7 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: List.generate(
                         20,
-                        (index) => Container(
-                          width: 80,
-                          height: 80,
-                          margin: const EdgeInsets.only(right: 5),
-                          padding: const EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: AppColors.transparent,
-                            image: DecorationImage(
-                              image:
-                                  Image.asset('assets/images/girl.png').image,
-                              fit: BoxFit.fitHeight,
-                            ),
-                            border: Border.all(
-                              color: AppColors.white,
-                              width: 2,
-                            ),
-                            borderRadius: BorderRadius.circular(6),
-                          ),
-                        ),
+                        (index) => const ClothingItemWidget(),
                       ),
                     ),
                   ),

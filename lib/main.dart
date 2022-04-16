@@ -1,8 +1,7 @@
-import 'package:dollzmania/src/app/app_module.dart';
 import 'package:flutter/services.dart';
 import 'package:dependency_module/dependency_module.dart';
 
-import 'src/app/app.dart';
+import 'src/app/app_module_base.dart';
 import 'package:flutter/material.dart';
 
 void main() {
