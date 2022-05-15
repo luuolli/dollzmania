@@ -1,13 +1,18 @@
 import 'package:dependency_module/dependency_module.dart';
-import 'package:flutter/foundation.dart';
 import 'package:sucrilhos_design_system/sucrilhos_design_system.dart';
 
 class App extends StatelessWidget {
-  const App({Key? key}) : super(key: key);
+  final bool debugMode;
+
+  const App({
+    Key? key,
+    this.debugMode = false,
+  }) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp.router(
-      debugShowCheckedModeBanner: kDebugMode,
+      debugShowCheckedModeBanner: debugMode,
       theme: lightTheme,
       darkTheme: darkTheme,
       themeMode: ThemeMode.dark,
@@ -18,6 +23,7 @@ class App extends StatelessWidget {
           decoration: BoxDecoration(
             gradient: AppGradients.mainGradient,
           ),
+          constraints: const BoxConstraints(maxWidth: 400),
           child: child,
         );
       },

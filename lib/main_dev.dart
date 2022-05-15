@@ -12,7 +12,7 @@ void main() {
   runApp(
     ModularApp(
       debugMode: false,
-      child: const App(),
+      child: const App(debugMode: true),
       module: AppModular(),
     ),
   );
