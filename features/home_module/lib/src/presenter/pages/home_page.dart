@@ -57,8 +57,37 @@ class HomePage extends StatelessWidget {
                 ),
               ],
             ),
-            Center(
-              child: Image.asset('assets/images/girl.png'),
+            Expanded(
+              child: InteractiveViewer(
+                panEnabled: true,
+                minScale: 0.5,
+                maxScale: 10,
+                child: Center(
+                  child: Stack(
+                    children: [
+                      // Image.asset(
+                      //   'assets/images/girl.png',
+                      // ),
+                      Draggable(
+                        onDragStarted: () {},
+                        onDragUpdate: (value) {
+                          print(value.localPosition);
+                        },
+                        feedback: Positioned.fill(
+                          child: Image.asset(
+                            'assets/images/girl.png',
+                          ),
+                        ),
+                        child: Positioned.fill(
+                          child: Image.asset(
+                            'assets/images/girl.png',
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ),
             Center(
               child: Column(
@@ -97,7 +126,18 @@ class HomePage extends StatelessWidget {
                     child: Row(
                       children: List.generate(
                         20,
-                        (index) => const ClothingItemWidget(),
+                        (index) => Draggable(
+                          onDragUpdate: (details) {
+                            print(details);
+                          },
+                          feedback: Text('asdas'),
+                          child: ClothingItemWidget(
+                            onSelect: (id) {},
+                            image: Image.asset(
+                              'assets/images/girl.png',
+                            ),
+                          ),
+                        ),
                       ),
                     ),
                   ),
